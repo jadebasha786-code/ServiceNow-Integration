@@ -26,7 +26,17 @@ This integration creates a new string field called `windsurf_sn` in the ServiceN
    }
    ```
 
-3. **Run the Field Creator**
+3. **Test Connection (Optional)**
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File src/test-connection.ps1
+   ```
+
+4. **Run the Field Creator**
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File src/servicenow-field-creator.ps1
+   ```
+
+   **Or using Python (if available):**
    ```bash
    python src/servicenow-field-creator.py
    ```
@@ -72,7 +82,18 @@ ServiceNow-Integration/
 ├── config/
 │   └── servicenow-config.json    # ServiceNow configuration
 ├── src/
-│   └── servicenow-field-creator.py    # Main script
+│   ├── servicenow-field-creator.py    # Python script
+│   ├── servicenow-field-creator.ps1   # PowerShell script
+│   └── test-connection.ps1            # Connection test script
 ├── requirements.txt               # Python dependencies
 └── README.md                     # This file
 ```
+
+## PowerShell Scripts
+
+The project includes PowerShell scripts for Windows environments:
+
+- **test-connection.ps1**: Tests ServiceNow connection and verifies table access
+- **servicenow-field-creator.ps1**: Creates the windsurf_sn field
+
+Both scripts use the same configuration file and provide detailed output with error handling.
