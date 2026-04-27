@@ -1,0 +1,26 @@
+{
+  "instance": {
+    "url": "https://dev230337.service-now.com",
+    "username": "",
+    "password": "",
+    "api_version": "v2"
+  },
+  "table": {
+    "name": "x_2022294_incident_ai_table",
+    "field_to_create": {
+      "name": "windsurf_sn",
+      "type": "string",
+      "label": "Windsurf SN",
+      "max_length": 255,
+      "mandatory": false,
+      "read_only": false,
+      "default_value": "",
+      "column_label": "Windsurf SN"
+    }
+  },
+  "api_endpoints": {
+    "table": "/api/now/table/{tableName}",
+    "fields": "/api/now/table/sys_dictionary",
+    "auth": "/api/now/auth/oauth"
+  }
+}
